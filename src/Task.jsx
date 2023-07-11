@@ -1,6 +1,6 @@
 import react from "react";
 import { useState } from "react";
-import { ReactComponent as Check } from "./check-mark-svgrepo-com.svg";
+import { ReactComponent as Check } from "./resources/check-mark-svgrepo-com.svg";
 
 const uncheckBoxStyle = {
   position: "relative",
@@ -13,7 +13,7 @@ const uncheckBoxStyle = {
   height: "24px",
   marginLeft: "10px",
   marginRight: "10px",
-  borderRadius: "400px"
+  borderRadius: "400px",
 };
 
 const checkBoxStyle = {
@@ -25,7 +25,7 @@ const checkBoxStyle = {
   height: "24px",
   marginLeft: "10px",
   marginRight: "10px",
-  borderRadius: "400px"
+  borderRadius: "400px",
 };
 
 /* When creating the onHandle button I created the 
@@ -52,8 +52,8 @@ export default function Task(props) {
               ? {
                   fill: "white",
                   position: "relative",
-                  right: "3px",
-                  top: "2px"
+                  right: "2px",
+                  top: "2px",
                 }
               : { fill: "transparent" }
           }

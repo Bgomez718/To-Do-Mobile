@@ -1,5 +1,5 @@
 .App {
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
 }
 
@@ -9,6 +9,11 @@ html {
 
 label {
   color: white;
+}
+
+.taskCount {
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .noStrike {
@@ -30,6 +35,16 @@ label {
 .strikethrough {
   margin-left: "20px";
   text-decoration: line-through;
+}
+
+.section {
+  min-width: 160px;
+  min-height: 100px;
+  appearance: none;
+  border-style: hidden;
+  border-radius: 32px;
+  background-color: #041955;
+  box-shadow: 0px 5px 8px #0f2767;
 }
 
 .add {
