@@ -14,10 +14,21 @@ label {
 .taskCount {
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
+  margin-left: 10px;
+}
+
+.taskLabel {
+  margin-left: 10px;
 }
 
 .noStrike {
   margin-left: "20px";
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .listContainer {

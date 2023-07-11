@@ -5,7 +5,7 @@ export default function Section() {
     <div className="sectionContainer">
       <button className="section">
         <label className="taskCount">18 task</label>
-        <h2>Hello</h2>
+        <label className="taskLabel">Hello</label>
       </button>
     </div>
   );
