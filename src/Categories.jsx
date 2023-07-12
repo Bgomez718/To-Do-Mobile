@@ -1,5 +1,6 @@
 import react from "react";
 import Button from "./Button";
+import AddTaskPage from "./components/AddTaskPage";
 import { useState } from "react";
 import { ReactComponent as Icon } from "./resources/plus-add-new-create-svgrepo-com.svg";
 
@@ -21,7 +22,7 @@ export default function Categories(props) {
         <label className="taskLabel">Hello</label>
       </button>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
-      {showCard && <Button />};
+      {showCard && <AddTaskPage />}
     </div>
   );
 }
