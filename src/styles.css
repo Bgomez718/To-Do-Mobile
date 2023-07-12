@@ -1,5 +1,5 @@
 .App {
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
 }
 
@@ -11,8 +11,29 @@ label {
   color: white;
 }
 
+.taskCount {
+  font-size: 11px;
+  font-weight: bold;
+  color: #7284ba;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.taskLabel {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
 .noStrike {
   margin-left: "20px";
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .listContainer {
@@ -30,6 +51,16 @@ label {
 .strikethrough {
   margin-left: "20px";
   text-decoration: line-through;
+}
+
+.section {
+  min-width: 160px;
+  min-height: 100px;
+  appearance: none;
+  border-style: hidden;
+  border-radius: 22px;
+  background-color: #041955;
+  box-shadow: 0px 5px 8px #0f2767;
 }
 
 .add {
