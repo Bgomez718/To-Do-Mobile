@@ -12,13 +12,18 @@ label {
 }
 
 .taskCount {
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #7284ba;
   font-family: "Montserrat", sans-serif;
   margin-left: 10px;
+  margin-top: 20px;
 }
 
 .taskLabel {
+  font-size: 20px;
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .noStrike {
@@ -53,7 +58,7 @@ label {
   min-height: 100px;
   appearance: none;
   border-style: hidden;
-  border-radius: 32px;
+  border-radius: 22px;
   background-color: #041955;
   box-shadow: 0px 5px 8px #0f2767;
 }

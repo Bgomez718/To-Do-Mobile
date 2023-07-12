@@ -1,7 +1,7 @@
 import "./styles.css";
 import Button from "./Button";
 import Task from "./Task";
-import Section from "./Section";
+import Categories from "./Categories";
 import { ReactComponent as Icon } from "./resources/plus-add-new-create-svgrepo-com.svg";
 
 const hello = () => {
@@ -12,7 +12,9 @@ export default function App() {
   return (
     <div className="App">
       <div>
-        <Section />
+        <Categories />
+
+       
       </div>
     </div>
   );
