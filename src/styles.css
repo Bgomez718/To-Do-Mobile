@@ -69,3 +69,14 @@ label {
   right: 8px;
   background-color: #eb06ff;
 }
+
+.addTask-container {
+  background-color: #041955;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  border-radius: 20px;
+}
+
+.addTask-container > form {
+  background-color: redred;
+}
