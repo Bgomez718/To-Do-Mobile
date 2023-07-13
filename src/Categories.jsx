@@ -22,7 +22,7 @@ export default function Categories(props) {
         <label className="taskLabel">Hello</label>
       </button>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
-      {showCard && <AddTaskPage />}
+      {showCard && <AddTaskPage onClick={ShowAddPage} onCancel={ShowAddPage} />}
     </div>
   );
 }
