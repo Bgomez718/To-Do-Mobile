@@ -1,5 +1,6 @@
 import react from "react";
 import { useState } from "react";
+import Button from "../Button";
 
 export default function AddTaskPage() {
   const [inputValue, setInputValue] = useState("");
@@ -8,9 +9,12 @@ export default function AddTaskPage() {
   }
   return (
     <div className="addTask-container">
-      <h1>AHAHAHA</h1>
       <form>
+        <br />
+        <br />
         <input type="text" value={inputValue} onChange={handleInputChange} />
+        <button />
+        <button />
       </form>
     </div>
   );

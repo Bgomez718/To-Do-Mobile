@@ -11,11 +11,7 @@ const hello = () => {
 export default function App() {
   return (
     <div className="App">
-      <div>
-        <Categories />
-
-       
-      </div>
+      <Categories />
     </div>
   );
 }

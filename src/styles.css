@@ -71,12 +71,39 @@ label {
 }
 
 .addTask-container {
-  background-color: #041955;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  
-  border-radius: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
 }
 
 .addTask-container > form {
-  background-color: redred;
+  display: flex;
+  flex-direction: column;
+  background-color: #041955;
+  width: 80%;
+  max-width: 300px;
+  height: 40vh;
+  border-radius: 20px;
+}
+
+.addTask-container > form > input {
+  height: 30px;
+  min-width: 210px;
+  padding: 6px;
+  border: solid 2px #dd07f5;
+}
+
+input[type="text"] {
+  border-style: none;
+  border-radius: 20px;
+  color: white; /* Change the text color to red */
+  background-color: #325ac7; /* Change the background color to yellow */
+  display: inline-block;
 }
