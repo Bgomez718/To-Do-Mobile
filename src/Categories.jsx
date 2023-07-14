@@ -1,18 +1,21 @@
 import react from "react";
 import Button from "./Button";
 import AddTaskPage from "./components/AddTaskPage";
+import Task from "./Task";
 import { useState } from "react";
 import { ReactComponent as Icon } from "./resources/plus-add-new-create-svgrepo-com.svg";
 
 export default function Categories(props) {
   const [showCard, setShowCard] = useState("false");
+  const [tasks, setTask] = useState([]);
 
   function ShowAddPage() {
     setShowCard(!showCard);
   }
 
-  function handleAddTask() {
+  function handleAddTask(task) {
     //need to grab
+    setTask([...tasks, task]);
     setShowCard(!showCard);
   }
 
@@ -23,7 +26,12 @@ export default function Categories(props) {
         <label className="taskCount">18 task</label>
         <label className="taskLabel">Hello</label>
       </button>
-      <div className="tasksList"></div>
+      <div className="tasksList">
+        {tasks.map((task, index) => (
+          <Task label={task} id={index} />
+        ))}
+        ;
+      </div>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
       {showCard && (
         <AddTaskPage
