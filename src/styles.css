@@ -130,6 +130,15 @@ label {
   margin-top: 5px;
   margin-bottom: 30px;
 }
+.deleteTaskBtn {
+  background-color: #7284ba;
+  height: 30px;
+  width: 190px;
+  border-style: none;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
 
 input[type="text"] {
   border-style: none;

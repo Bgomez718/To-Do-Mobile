@@ -38,7 +38,7 @@ of components.  */
 export default function Task(props) {
   const [isChecked, setIsChecked] = useState(false);
   const [options, setOptions] = useState(true);
-  const { label, id } = props;
+  const { label, id, onDelete } = props;
 
   //if its not checked
   function handleClick(boolean) {
@@ -47,8 +47,8 @@ export default function Task(props) {
 
   function toggleOptions() {
     setOptions(!options);
-    console.log("toggling options");
   }
+
   return (
     <div className="listContainer">
       <button
@@ -73,10 +73,21 @@ export default function Task(props) {
         {props.label}
       </label>
       <Dots
-        style={{ fill: "#7284ba", marginLeft: "auto", marginRight: "15px" }}
+        style={{
+          fill: "#7284ba",
+          marginLeft: "auto",
+          marginRight: "15px",
+          minWidth: "30px",
+        }}
         onClick={toggleOptions}
       />
-      {!options && <OptionsTaskPage />}
+      {!options && (
+        <OptionsTaskPage
+          onCancel={toggleOptions}
+          onDelete={() => props.onDelete(id)}
+          onToggleOptions={toggleOptions}
+        />
+      )}
     </div>
   );
 }

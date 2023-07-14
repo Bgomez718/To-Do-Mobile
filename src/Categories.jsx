@@ -19,6 +19,12 @@ export default function Categories(props) {
     setShowCard(!showCard);
   }
 
+  function handleDeleteTask(id) {
+    const newList = [...tasks];
+    newList.splice(id, 1);
+    setTask(newList);
+  }
+
   return (
     <div className="sectionContainer">
       {/* The goal of this is to show a set of new task when a section is clicked*/}
@@ -28,7 +34,7 @@ export default function Categories(props) {
       </button>
       <div className="tasksList">
         {tasks.map((task, index) => (
-          <Task label={task} id={index} />
+          <Task label={task} id={index} onDelete={handleDeleteTask} />
         ))}
         ;
       </div>
