@@ -9,20 +9,29 @@ export default function Categories(props) {
 
   function ShowAddPage() {
     setShowCard(!showCard);
-    console.log("IIIIIIIII");
   }
-  function showSection() {
-    console.log("HELLLOOOOOOOOOO");
+
+  function handleAddTask() {
+    //need to grab
+    setShowCard(!showCard);
   }
+
   return (
     <div className="sectionContainer">
       {/* The goal of this is to show a set of new task when a section is clicked*/}
-      <button className="section" onClick={showSection}>
+      <button className="section">
         <label className="taskCount">18 task</label>
         <label className="taskLabel">Hello</label>
       </button>
+      <div className="tasksList"></div>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
-      {showCard && <AddTaskPage onClick={ShowAddPage} onCancel={ShowAddPage} />}
+      {showCard && (
+        <AddTaskPage
+          onClick={ShowAddPage}
+          onCancel={ShowAddPage}
+          onAdd={handleAddTask}
+        />
+      )}
     </div>
   );
 }

@@ -35,7 +35,8 @@ of components.  */
 
 export default function Task(props) {
   const [isChecked, setIsChecked] = useState(false);
- 
+  const { label, id } = props;
+
   //if its not checked
   function handleClick(boolean) {
     setIsChecked(!isChecked);
