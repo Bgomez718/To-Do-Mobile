@@ -138,3 +138,24 @@ input[type="text"] {
   background-color: #325ac7; /* Change the background color to yellow */
   display: inline-block;
 }
+
+.dim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.option-container {
+  background-color: #041955;
+  width: 80%;
+  max-width: 300px;
+  min-height: 40vh;
+  border-radius: 20px;
+}

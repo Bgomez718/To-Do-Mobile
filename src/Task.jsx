@@ -1,6 +1,8 @@
 import react from "react";
 import { useState } from "react";
 import { ReactComponent as Check } from "./resources/check-mark-svgrepo-com.svg";
+import { ReactComponent as Dots } from "./resources/three-dots-svgrepo-com.svg";
+import OptionsTaskPage from "./components/OptionsTaskPage";
 
 const uncheckBoxStyle = {
   position: "relative",
@@ -35,11 +37,17 @@ of components.  */
 
 export default function Task(props) {
   const [isChecked, setIsChecked] = useState(false);
+  const [options, setOptions] = useState(true);
   const { label, id } = props;
 
   //if its not checked
   function handleClick(boolean) {
     setIsChecked(!isChecked);
+  }
+
+  function toggleOptions() {
+    setOptions(!options);
+    console.log("toggling options");
   }
   return (
     <div className="listContainer">
@@ -64,6 +72,11 @@ export default function Task(props) {
       <label className={isChecked ? "strikethrough" : "noStrike"}>
         {props.label}
       </label>
+      <Dots
+        style={{ fill: "#7284ba", marginLeft: "auto", marginRight: "15px" }}
+        onClick={toggleOptions}
+      />
+      {!options && <OptionsTaskPage />}
     </div>
   );
 }
