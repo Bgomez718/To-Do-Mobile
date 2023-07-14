@@ -33,7 +33,7 @@ export default function Categories(props) {
         ;
       </div>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
-      {showCard && (
+      {!showCard && (
         <AddTaskPage
           onClick={ShowAddPage}
           onCancel={ShowAddPage}
