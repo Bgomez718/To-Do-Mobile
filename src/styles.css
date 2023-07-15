@@ -107,15 +107,15 @@ label {
   position: relative;
   bottom: 35px;
   height: 30px;
-  width: 190px;
+  width: 170px;
   padding: 6px;
   border: solid 2px #dd07f5;
 }
 
 .addTaskBtn {
   background-color: #237bff;
-  height: 30px;
-  width: 190px;
+  height: 40px;
+  width: 170px;
   border-style: none;
   border-radius: 20px;
   margin-top: 35px;
@@ -123,8 +123,8 @@ label {
 
 .cancelTaskBtn {
   background-color: #dd07f5;
-  height: 30px;
-  width: 190px;
+  height: 40px;
+  width: 170px;
   border-style: none;
   border-radius: 20px;
   margin-top: 5px;
@@ -132,8 +132,8 @@ label {
 }
 .deleteTaskBtn {
   background-color: #7284ba;
-  height: 30px;
-  width: 190px;
+  height: 40px;
+  width: 170px;
   border-style: none;
   border-radius: 20px;
   margin-top: 5px;
