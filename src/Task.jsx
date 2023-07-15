@@ -1,5 +1,4 @@
-import react from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Check } from "./resources/check-mark-svgrepo-com.svg";
 import { ReactComponent as Dots } from "./resources/three-dots-svgrepo-com.svg";
 import OptionsTaskPage from "./components/OptionsTaskPage";
@@ -30,23 +29,22 @@ const checkBoxStyle = {
   borderRadius: "400px",
 };
 
-/* When creating the onHandle button I created the 
-function at global scope which affect all of the components
-of this type, I confused the rule of not create components inside 
-of components.  */
-
 export default function Task(props) {
   const [isChecked, setIsChecked] = useState(false);
-  const [options, setOptions] = useState(true);
+  const [showOptions, setShowOptions] = useState(false);
   const { label, id, onDelete } = props;
 
-  //if its not checked
-  function handleClick(boolean) {
+  function handleClick() {
     setIsChecked(!isChecked);
   }
 
   function toggleOptions() {
-    setOptions(!options);
+    setShowOptions(!showOptions);
+  }
+
+  function handleDelete() {
+    onDelete(id);
+    toggleOptions();
   }
 
   return (
@@ -57,20 +55,11 @@ export default function Task(props) {
         onClick={handleClick}
       >
         <Check
-          style={
-            isChecked
-              ? {
-                  fill: "white",
-                  position: "relative",
-                  right: "2px",
-                  top: "2px",
-                }
-              : { fill: "transparent" }
-          }
+          style={isChecked ? { fill: "white" } : { fill: "transparent" }}
         />
       </button>
       <label className={isChecked ? "strikethrough" : "noStrike"}>
-        {props.label}
+        {label}
       </label>
       <Dots
         style={{
@@ -81,12 +70,8 @@ export default function Task(props) {
         }}
         onClick={toggleOptions}
       />
-      {!options && (
-        <OptionsTaskPage
-          onCancel={toggleOptions}
-          onDelete={() => props.onDelete(id)}
-          onToggleOptions={toggleOptions}
-        />
+      {showOptions && (
+        <OptionsTaskPage onDelete={handleDelete} onCancel={toggleOptions} />
       )}
     </div>
   );

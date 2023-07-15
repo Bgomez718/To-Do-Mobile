@@ -36,7 +36,6 @@ export default function Categories(props) {
         {tasks.map((task, index) => (
           <Task label={task} id={index} onDelete={handleDeleteTask} />
         ))}
-        ;
       </div>
       <Button className="add" icon={<Icon />} onClick={ShowAddPage} />
       {!showCard && (
