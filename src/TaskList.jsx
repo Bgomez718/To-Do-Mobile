@@ -5,7 +5,7 @@ import Task from "./Task";
 import { useState } from "react";
 import { ReactComponent as Icon } from "./resources/plus-add-new-create-svgrepo-com.svg";
 
-export default function Categories(props) {
+export default function TaskList(props) {
   const [showCard, setShowCard] = useState("false");
   const [tasks, setTask] = useState([]);
   const [taskCount, setTaskCount] = useState(getCount());
@@ -40,15 +40,9 @@ export default function Categories(props) {
   return (
     <div className="sectionContainer">
       {/* The goal of this is to show a set of new task when a section is clicked*/}
+
       <div className="flex-container">
-        <label className="title">CATEGORIES</label>
-      </div>
-      <button className="section">
-        <label className="taskCount">{getCount()} </label>
-        <label className="taskLabel">Hello</label>
-      </button>
-      <div className="flex-container">
-        <label className="title">TODAY'S TASK</label>
+        <label className="titles">TODAY'S TASK</label>
       </div>
       <div className="tasksList">
         {tasks.map((task, index) => (
