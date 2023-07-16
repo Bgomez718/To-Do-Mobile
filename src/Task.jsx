@@ -1,6 +1,7 @@
-import react from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Check } from "./resources/check-mark-svgrepo-com.svg";
+import { ReactComponent as Dots } from "./resources/three-dots-svgrepo-com.svg";
+import OptionsTaskPage from "./components/OptionsTaskPage";
 
 const uncheckBoxStyle = {
   position: "relative",
@@ -28,18 +29,24 @@ const checkBoxStyle = {
   borderRadius: "400px",
 };
 
-/* When creating the onHandle button I created the 
-function at global scope which affect all of the components
-of this type, I confused the rule of not create components inside 
-of components.  */
-
 export default function Task(props) {
   const [isChecked, setIsChecked] = useState(false);
- 
-  //if its not checked
-  function handleClick(boolean) {
+  const [showOptions, setShowOptions] = useState(false);
+  const { label, id, onDelete } = props;
+
+  function handleClick() {
     setIsChecked(!isChecked);
   }
+
+  function toggleOptions() {
+    setShowOptions(!showOptions);
+  }
+
+  function handleDelete() {
+    onDelete(id);
+    toggleOptions();
+  }
+
   return (
     <div className="listContainer">
       <button
@@ -48,21 +55,24 @@ export default function Task(props) {
         onClick={handleClick}
       >
         <Check
-          style={
-            isChecked
-              ? {
-                  fill: "white",
-                  position: "relative",
-                  right: "2px",
-                  top: "2px",
-                }
-              : { fill: "transparent" }
-          }
+          style={isChecked ? { fill: "white" } : { fill: "transparent" }}
         />
       </button>
       <label className={isChecked ? "strikethrough" : "noStrike"}>
-        {props.label}
+        {label}
       </label>
+      <Dots
+        style={{
+          fill: "#7284ba",
+          marginLeft: "auto",
+          marginRight: "15px",
+          minWidth: "30px",
+        }}
+        onClick={toggleOptions}
+      />
+      {showOptions && (
+        <OptionsTaskPage onDelete={handleDelete} onCancel={toggleOptions} />
+      )}
     </div>
   );
 }
