@@ -8,6 +8,18 @@ import { ReactComponent as Icon } from "./resources/plus-add-new-create-svgrepo-
 export default function Categories(props) {
   const [showCard, setShowCard] = useState("false");
   const [tasks, setTask] = useState([]);
+  const [taskCount, setTaskCount] = useState(getCount());
+
+  function getCount() {
+    let count = 0;
+    tasks.map((task) => {
+      count++;
+    });
+    if (count == 1) {
+      return 1 + " task";
+    }
+    return count + " tasks";
+  }
 
   function ShowAddPage() {
     setShowCard(!showCard);
@@ -28,10 +40,12 @@ export default function Categories(props) {
   return (
     <div className="sectionContainer">
       {/* The goal of this is to show a set of new task when a section is clicked*/}
+      <label> CATEGORIES </label>
       <button className="section">
-        <label className="taskCount">18 task</label>
+        <label className="taskCount">{getCount()} </label>
         <label className="taskLabel">Hello</label>
       </button>
+      <label>TODAY'S TASK</label>
       <div className="tasksList">
         {tasks.map((task, index) => (
           <Task label={task} id={index} onDelete={handleDeleteTask} />
