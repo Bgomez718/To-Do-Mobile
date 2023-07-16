@@ -6,7 +6,6 @@ export default function OptionsTaskPage(props) {
   return (
     <div className="dim">
       <div className="option-container">
-        <button className="addTaskBtn text1">Update</button>
         <button className="deleteTaskBtn text1" onClick={onDelete}>
           Delete
         </button>
